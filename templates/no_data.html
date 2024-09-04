@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}No Data Found{% endblock %}
+
+{% block content %}
+<h2>No Data Found</h2>
+<img src="{{ url_for('static', filename='no_data.png') }}" alt="No Data">
+<p class="message">Немає даних</p>
+{% endblock %}
