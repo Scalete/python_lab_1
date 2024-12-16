@@ -4,23 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Flask Travel Agency{% endblock %}</title>
+
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Подключение пользовательских стилей -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Flask Travel Agency</h1>
-        <nav>
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('expensive_turkey') }}">Most Expensive Turkey Trip</a>
-        </nav>
+    <header class="bg-primary text-white p-3 mb-4">
+        <div class="container">
+            <h1 class="mb-0">Welcome to Flask Travel Agency</h1>
+            <nav class="mt-2">
+                <a href="{{ url_for('index') }}" class="btn btn-light mr-2">Home</a>
+                <a href="{{ url_for('expensive_turkey') }}" class="btn btn-light mr-2">Most Expensive Turkey Trip</a>
+                <a href="{{ url_for('form') }}" class="btn btn-light">Trip Selection Form</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
-        <p>&copy; 2024 Flask Travel Agency</p>
+    <footer class="bg-light text-center p-3 mt-4">
+        <p class="mb-0">&copy; 2024 Flask Travel Agency</p>
     </footer>
+
+    <!-- Подключение Bootstrap JS (необязательно, если не используется JS-компоненты) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
