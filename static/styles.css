@@ -1,3 +1,5 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css');
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -20,4 +22,8 @@ th {
 .message {
     color: red;
     font-weight: bold;
+}
+
+.invalid-feedback {
+    display: block;
 }

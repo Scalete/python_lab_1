@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Select a Trip{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Select a Trip</h2>
+  <form method="POST" action="{{ url_for('submit') }}" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="operator">Choose Operator:</label>
+      <select class="form-control" id="operator" name="operator" required>
+        <option value="">Select an Operator</option>
+        <option value="Operator1">Operator1</option>
+        <option value="Operator2">Operator2</option>
+        <option value="Operator3">Operator3</option>
+        <option value="Operator4">Operator4</option>
+        <option value="Operator5">Operator5</option>
+      </select>
+      <div class="invalid-feedback">Please select an operator.</div>
+    </div>
+
+    <div class="form-group">
+      <label>Choose Trip Duration:</label><br>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="duration" id="short" value="short" required>
+        <label class="form-check-label" for="short">5-7 Days</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="duration" id="long" value="long" required>
+        <label class="form-check-label" for="long">More than 7 Days</label>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+{% endblock %}
